@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+	
+	<!-- This page can be used as a template for completing your writeups for milestone and "deep dive" assignments -->
+	<!-- Replace the content placeholders with your own content -->
+	
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<title>Geography 485L/585L Week 2</title>
+	</head>
+	<body>
+	<p>
+	Willard Hunter<br>
+	January 28, 2014
+	</p>
+	<h1>Lab 2 Assignment: Create a More Complex Web Page and Style It</h1>
+	<h2>From examining the display in your web browser and the structure of the source code in the page, what effect (if any) does the white space (i.e. tabs, blank lines, multiple spaces) have on what is displayed in the browser? </h2>
+	<p>These white spaces have no impact on the display of the webpage. The browser ignores them.</p>
+	<h2>How are the &lt;h1&gt; and &lt;h2&gt; elements from the source code displayed differently in the browser?</h2>
+	<p>These &lt;h1&gt; and &lt;h2&gt; elements are the first two elements in an outline hierarchy. Typically, &lt;h1&gt; is a larger font size and may be a different color. &lt;h2&gt; is a smaller font size.</p>
+	<h2>What type of element would you use to create additional list elements in either the &quot;topic&quot; or &quot;data type&quot; lists on the page.</h2>
+	<p> option and ref or href</p>
+	
+	< href= "map"
+	</body>
+</html>

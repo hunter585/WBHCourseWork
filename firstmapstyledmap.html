@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+      html { height: 100% }
+      body { height: 100%; margin: 0; padding: 0 }
+      #map-canvas { height: 100% }
+    </style>
+    <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?sensor=false">
+		
+
+   </script>
+    <script type="text/javascript">
+		google.maps.event.addDomListener(window, 'load', initialize);
+      function initialize() {
+        var mapOptions = {
+          center: new google.maps.LatLng(35.12, -106.633),
+          zoom: 11
+        };
+        var map = new google.maps.Map(document.getElementById("map-canvas"),
+            mapOptions);
+						[
+  {
+    "featureType": "water",
+    "stylers": [
+      { "visibility": "on" },
+      { "color": "red" },
+      { "hue": "#9900ff" }
+		
+    ]
+  },{
+    "featureType": "transit.station",
+    "stylers": [
+      { "color": "#80b380" }
+    ]
+  },{
+    "featureType": "road",
+    "stylers": [
+      { "color": "pink" }
+    ]
+  },{
+    "featureType": "poi.medical",
+    "stylers": [
+      { "hue": "#1100ff" }
+    ]
+  },{
+    "featureType": "landscape",
+    "stylers": [
+      { "color": "#678080" },
+      { "weight": 0.1 },
+      { "visibility": "simplified" }
+    ]
+  }
+]
+      }
+      
+    </script>
+  </head>
+  <body>
+    <div id="map-canvas"/>
+  </body>
+</html>

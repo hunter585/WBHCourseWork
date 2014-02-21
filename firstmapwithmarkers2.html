@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+      html { height: 100% }
+      body { height: 100%; margin: 0; padding: 0 }
+      #map-canvas { height: 100% }
+    </style>
+    <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?sensor=false">
+		
+
+   </script>
+    <script type="text/javascript">
+		google.maps.event.addDomListener(window, 'load', initialize);
+      function initialize() {
+        var mapOptions = {
+          center: new google.maps.LatLng(35.0503, -106.5769),
+          zoom: 12,
+					scaleControl: true,
+					streetViewControl: true
+        };
+        var map = new google.maps.Map(document.getElementById("map-canvas"),
+            mapOptions);
+				var markersnl = new google.maps.Marker({
+						position: new google.maps.LatLng(34.9920, -106.5457),
+						map: map,
+						title: 'Click me'
+						});
+				var infowindowsnl = new google.maps.InfoWindow({
+						content:'Sandia National Labs Mixed Waste Landfill (dump)'
+						});
+						google.maps.event.addListener(markersnl, 'click', function () {
+						infowindowsnl.open(map, markersnl);
+						});
+				var markeredb = new google.maps.Marker({
+						position: new google.maps.LatLng(35.0495, -106.5770),
+						map: map,
+						title: 'Click me'
+						});
+				var infowindowedb = new google.maps.InfoWindow({
+						content:'EDB plume from Kirtland AFB Fuel Leak'
+						});
+						google.maps.event.addListener(markeredb, 'click', function () {
+						infowindowedb.open(map, markeredb);
+						});
+						
+				var markerVADW = new google.maps.Marker({
+						position: new google.maps.LatLng(35.0526, -106.5834),
+						map: map,
+						title: 'Click me'
+						});
+				var infowindowVADW = new google.maps.InfoWindow({
+						content:'VA Hospital Drinking Well'
+						});
+						google.maps.event.addListener(markerVADW, 'click', function () {
+						infowindowVADW.open(map, markerVADW);
+						});
+						
+				var markerAFB16DW = new google.maps.Marker({
+						position: new google.maps.LatLng(35.0515, -106.5693),
+						map: map,
+						title: 'Click me'
+						});
+				var infowindowAFB16DW = new google.maps.InfoWindow({
+						content:'Kirtland AFB #16 Drinking Well'
+						});
+						google.maps.event.addListener(markerAFB16DW, 'click', function () {
+						infowindowAFB16DW.open(map, markerAFB16DW);
+						});
+						
+				var markerRC5DW = new google.maps.Marker({
+						position: new google.maps.LatLng(35.0724, -106.5627),
+						map: map,
+						title: 'Click me'
+						});
+				var infowindowRC5DW = new google.maps.InfoWindow({
+						content:'Ridgecrest #5 Drinking Well'
+						});
+						google.maps.event.addListener(markerRC5DW, 'click', function () {
+						infowindowRC5DW.open(map, markerRC5DW);
+						});
+						
+				var markerRC3DW = new google.maps.Marker({
+						position: new google.maps.LatLng(35.0721, -106.5532),
+						map: map,
+						title: 'Click me'
+						});
+				var infowindowRC3DW = new google.maps.InfoWindow({
+						content:'Ridgecrest #3 Drinking Well'
+						});
+						google.maps.event.addListener(markerRC3DW, 'click', function () {
+						infowindowRC3DW.open(map, markerRC3DW);
+						});
+      }
+      
+    </script>
+  </head>
+  <body>
+    <div id="map-canvas"/>
+  </body>
+</html>

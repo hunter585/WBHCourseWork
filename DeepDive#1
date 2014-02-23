@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+	
+	<!-- This page can be used as a template for completing your writeups for milestone and "deep dive" assignments -->
+	<!-- Replace the content placeholders with your own content -->
+	
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<title>Geography 485L/585L Deep Dive #1</title>
+	</head>
+			<style type ="text/css">
+		h1 { text-align: center; color: red; text: large}
+		h2 { text-align: left; color: blue; text: medium;}
+		h3 { text-align: left; color: black; text: medium;}
+		
+		[
+
+		</style>
+	<body>
+	<p>
+	Willard Hunter<br>
+	February 19, 2014
+	</p>
+	<h1>Deep Dive #1: Map with markers and infoboxes</h1>
+<h3>Question 1: The type of information you want to depict in your map? </h3>
+			<li>I want to show the locations of serious national security pollution locations in ABQ and some of the drinking wells nearby.</li>
+<h3>Question 2: Reasons for selecting specific areas shown in the map?.</h3>
+			<li> I want to increase visibility of the threats these pollutions source pose for the drinking water for the community </li>
+<h3>Question 3: Descibe what I am trying to communicate with the map.</h3>
+	<li> The maps shows important drinking water wells are very close to the Kirtland AFB pollution source and location of SNL Mixed Waste Landfill (Dump). </li>
+<h3
+	<p><A HREF="http://hunter585.github.io/WBHCourseWork/firstmapwithmarkers2.html"> Map of Albuquerque with Major pollution sources</A></p
+	</body>
+</html>

@@ -26,21 +26,24 @@
 				var markersnl = new google.maps.Marker({
 						position: new google.maps.LatLng(34.9920, -106.5457),
 						map: map,
-						title: 'Click me'
+						title: 'Click me',
+						icon: 'http://gmaps-samples.googlecode.com/svn/trunk/markers/blue/blank.png',
 						});
 				var infowindowsnl = new google.maps.InfoWindow({
-						content:'Sandia National Labs Mixed Waste Landfill (dump)'
+						content:'Sandia National Labs Mixed Waste Landfill (dump); unprotected source of radioactive & other toxic waste'
 						});
 						google.maps.event.addListener(markersnl, 'click', function () {
 						infowindowsnl.open(map, markersnl);
+						
 						});
 				var markeredb = new google.maps.Marker({
 						position: new google.maps.LatLng(35.0495, -106.5770),
 						map: map,
-						title: 'Click me'
+						title: 'Click me',
+						icon: 'http://gmaps-samples.googlecode.com/svn/trunk/markers/blue/blank.png',
 						});
 				var infowindowedb = new google.maps.InfoWindow({
-						content:'EDB plume from Kirtland AFB Fuel Leak'
+						content:'Closed Kirtland AFB Fuel Depot; source of major fuel leak'
 						});
 						google.maps.event.addListener(markeredb, 'click', function () {
 						infowindowedb.open(map, markeredb);

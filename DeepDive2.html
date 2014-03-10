@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+	
+	<!-- This is a template for your home page for the class -->
+	<!-- Replace the sample content with your own -->
+	
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<title>Week 6: OGC Service Concepts: Deep Dive #2</title>
+				<style type ="text/css">
+		h1 { text-align: center; color: red; text: large}
+		h2 { text-align: left; color: blue; text: medium;}
+		h3 { text-align: left; color: black; text: medium;}
+			
+		</style>
+<h2 id="week-6-ogc-service-concepts"><a href="#week-6-ogc-service-concepts">Week 6: OGC Service Concepts: Deep Dive #2</a></h2>
+<dl>
+<h3>Question 1</h3>
+<dd>What request type is common across all three (WMS, WFS, WCS) OGC web services that we have learned about?
+<p>WMS GetCapabilities</p>
+<h3>Answer the following questions about a WMS GetCapabilities request.</h3>
+<p></p>
+<p></p>
+<dt>Question 2</dt>
+<dd>What are the required parameters, and what do they represent?
+<p>SERVICE=WMS ... service type.</p>
+<p>REQUEST=GetCapabilities ... request name.</p>
+<p>Other parameters are optional.</p> 
+<dd>What is returned in response to a WMS GetCapabilities request?
+<p>This is from the esri site:
+The GetCapabilities request provides the following information about a WMS service:</p>
+<p>All interfaces a WMS service can support</p>
+<p>Image formats it can serve (e.g. jpeg, png, gif)</p>
+<p>List of spatial reference systems available for delivery of map data</p>
+<p>List of all exception formats for return of exceptions</p>
+<p>List of all vendor specific capabilities (or properties) that are available for modifying or controlling actions of the service with the current value of each capability</p>
+<p>List of one or more map layers available in the service</p>
+<p>List of layers supporting the optional GetFeatureInfo interface</p>
+    
+
+<h3>Answer the following questions about a WMS GetMap request</h3>
+<dl>
+<h3>Question 3</h3>
+<dd>What are the required parameters, and what do they represent?</dd>
+<p>VERSION=version ... Request version.</p>
+<p>REQUEST=GetMap ... Request name.</p>
+<p>LAYERS=layer_list ... Comma-separated list of one or more map layers.</p>
+<p>STYLES=style_list ... Comma-separated list of one rendering style per requested layer. Optional if SLD parameter is present.</p>
+<p>SRS=namespace:identifier ... Spatial Reference System.</p>
+<p>CRS=namespace:identifier ... Spatial Reference System.</p>
+<p>BBOX=minx,miny,maxx,maxy ... Bounding box corners (lower left, upper right)in SRS units.</p>
+<p>WIDTH=output_width ... 1R0 Width in pixels of map picture.</p>
+
+<dd>What is returned in response to a WMS GetMap request?
+<p>From esri: "A GetMap request retrieves a map from a WMS site. GetMap allows the client to specify distinct layers, the spatial reference system, the geographic area, and other parameters describing the returned map format."</p>
+<dd><p>What is the significance of transparency in WMS requests?</p>
+<p> From esri: It provides a "Map’s background transparency. Default is FALSE."</p>
+<h3>Question 4</h3>
+<p>What OGC request would you use to inform the configuration of a client application (like ArcGIS) about an OGC service that you want to add layers from?</p>
+<p>"GetCapabilites" request will inform the configuration in an application like ArcGIS about an OGC service for adding layers.</p>
+</dl>
+<p>Which OGC request would you submit under the following circumstances (include both the service type [e.g. WMS, WFS, WCS], and the request [e.g. GetMap, GetCapabilities, GetCoverage, etc.] in your answer)</p>
+<dl>
+<h3>Question 5</h3>
+<dd>You want a map image representing three layers of data in a single JPEG for a specified area of interest.</dd>
+<dd>You want to retrieve data representing geometries and associated attributes for a road network, with the returned data in GML.
+</dd>
+<dd><p>You want to retrieve data representing a digital elevation model (a raster dataset) in the form of a GeoTIFF.</p>
+</dd>
+<h3>Question 6 - What are the EPSG codes of the following Spatial Reference Systems</h3>
+<dd>WGS 84 (Geodetic CRS [geographic 2d]) ... Code is EPSG:4326</dd>
+<p></p>
+<dd>NAD83 / UTM zone 13N ... Code is EPSG:26913</dd>
+<p></p>
+<dd><p>NAD27 / UTM zone 13N ... Code is EPSG:26712</p>
+</dd>
+</dl>
+<p>Use the <code>cs2cs</code> utility to convert the following WGS84 Geographic Coordinates [EPSG:4326] into UTM Zone 13, NAD83 [EPSG:2957] coordinates. Include your <code>cs2cs</code> command and output in your writeup.</p>
+<dl>
+<h3>Question 7</h3>
+<dd>35d14'19.29" N, 107d36'30.67" W (Mount Taylor Summit)</dd>
+<p>262635.74 (longitude) 3902633.36 (long)</p>
+
+<dd>34d16'40.34" N, 103d19'28.49" W (Blackwater Draw)</dd>
+<p>654223.84 (longitude) 3794236.77 (long)</p>
+
+<p></p>
+</dl>
+<p>Retrieve the GetCapabilities XML response from the following WMS, and answer the following questions.</p>
+<p><a href="http://gstore.unm.edu/apps/rgis/datasets/715663ba-c1c3-414c-84a7-c671526f8316/services/ogc/wms?SERVICE=wms&amp;REQUEST=GetCapabilities&amp;VERSION=1.1.1">http://gstore.unm.edu/apps/rgis/datasets/715663ba-c1c3-414c-84a7-c671526f8316/services/ogc/wms?SERVICE=wms&amp;REQUEST=GetCapabilities&amp;VERSION=1.1.1</a></p><dl>
+<h3>Question 8</h3>
+<dd>What is the Title of the service?</dd>
+<p>Title - rgis Dataset (715663ba-c1c3-414c-84a7-c671526f8316)</p>
+<dd>Who is the Contact Person for questions about the service?</dd>
+<p>GStore Support (no name)</p>
+<dd>What are the available image formats for the GetMap request for this service?</dd>
+<p>Formats: image/png, image/gif, image/jpeg, image/png; mode=8bit, image/tiff,application/vnd.google-earth.kml+xml,application/vnd.google-earth.kmz</p>
+<dd><p>What are the SRS/CRS’s for which layers from this service are available (remember that nested layers inherit the SRS/CRS of their parent layers).</p></dd>
+<p>These are the SRS's: EPSG:4269, EPSG:4326, EPSG:4267, EPSG:26913, EPSG:26912, EPSG:26914, EPSG:26713, EPSG:26712, EPSG:26714, EPSG:3857</p>
+<h3>Question 9</h3>
+<dd><p>Formulate a GetMap request for the "tl_2010_35_bg10" layer from this service, for a 500x500 pixel map image that is 0.05-degrees wide and 0.05-degress high, with the SW corner of the map image located at 35dN and -106d45'E [-106.75]. Include in your write-up the complete GetMap request and the returned map image. ?</p></dd></dl>
+<p><a href="http://gstore.unm.edu/apps/rgis/datasets/715663ba-c1c3-414c-84a7-c671526f8316/services/ogc/wms?version=1.1.1&SERVICE=WMS&request=GetMap&bbox=-106.75,35.05,-106.70,35.051&layers=tl_2010_35_bg10&FORMAT=image/png&TRANSPARENT=TRUE&STYLES=&SRS=EPSG:4326&WIDTH=500&HEIGHT=500"</a></p>
+<img src="C:\Users\Willard\Documents\My Dropbox\UNM Geography\Courses\2014 Spring\Geog 585 Internet Mapping\HTML-kit Files\Deep Dives\Dive#2\500x500image.jpg" alt="500x500image">
+</body>
+</html>

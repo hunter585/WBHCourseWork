@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+ 
+		<title>Milestone Week 5 - Proj4,GDAL, and OGR</title>
+			<style type ="text/css">
+		h1 { text-align: center; color: red; text: large}
+		h2 { text-align: left; color: blue; text: medium;}
+		h3 { text-algn: left; color: black; text: medium;}
+;
+		</style>
+
+	</head>
+
+   </script>
+    <script type="text/javascript">
+	
+	
+      
+    </script>
+  </head>
+  <body>
+	
+	<p> Milestone Week 5 - Proj4, GDAL, and OGR<br>
+	Willard Hunter<br>
+	February 26, 2014	</p>
+	<h2></h2>
+	<h3></h3>
+	<p></p>
+	<h2>Question 1: Briefly describe each dataset based upon the information from the web site.</h2>
+	<p>The Vector dataset is from RGIS/Climate/NewMexico/Snotel Vocas Locas, NM (Feb,2014). It is a shapefile with point geometry.</p>
+	<p>The Raster dataset is RGIS/Digital Orthophotography/1988/New Mexico/Goodson School, NM, NW Quarter, 1988. Shows desolate terrain in unoccupied piece of the school property.</p>
+	
+	<h2>Question 2: Examine each file using either gdalinfo or ogrinfo (depending upon whether it is a raster or vector data product), and answer the following questions about each data set:</h2>
+<h3>2.1 What is the projection/coordinate system for the data product? If it is undefined, note it.</h3>
+<p>Vector: Projection is WGS 1984. </p>
+<p>Raster: Projection is North American Datum 1983</p>
+
+<h3>2.2 What is the spatial extent (i.e. bounding box) of the data product?</h3>
+<p>Vector: The vector file is a point. Its coordinates are -106.8166667, 36.03333333</p>
+<p>Raster: The coordinates of the photograph are as follows: Upper left 103.13w, 37.0n. Lower left 103.13w, 36.94n. Upper right 103.13w, 37.0n. Lower Right 103.13n, 36.94n.
+
+
+<h3>2.3 If it is a vector dataset, how many features does it have?</h3>
+<p>Vector: 1. </p>
+
+<h3>2.4 If it is a raster dataset, what is the pixel resolution (include units) of the dataset?</h3>
+<p>Raster: Pixel resolution is 1 meter.  </p>
+
+<h2>Question 3:Use proj or cs2cs (I suggest you use cs2cs) to calculate the coordinates of the spatial extent of the datasets that you downloaded in UTM Zone 13N, NAD27. Paste the input and output of the command(s) into your writeup.  </h2>
+<p>Using http://www.geotoolkit.org/modules/referencing/supported-codes.html, Using the website identified above, the EPSG for the UTM Zone 13N, NAD27 projection is 26713. </p>
+<p>Vector: input is +init=epsg:4269 +init=26713. Used coordinates listed above. Projection: -106.81667 36.033333. Output is 106d49'0.012W 36d1'59.999'N 0.000 </p>
+<p>Raster: input is +init=epsg:4269 +init=epsg:26713. Used coordinates listed above. Output is 672670.44, 4096427.12; 666571.89, 4089645.45; 672670.44, 4096427.12; 666571.89, 4089645.45 </p>
+<p>
+<p>Here are shapshots of the cs2cs commands I used:</p>
+<p>Vector shapefile has only point geometry.     
+<img src="C:\Users\Willard\Documents\My Dropbox\UNM Geography\Courses\2014 Spring\Geog 585 Internet Mapping\Assignments\lab5\vector cs2cs.gif" border="0" alt="Vector image.gif" </a> 
+
+<p>Here are the raster commands:       
+<img src="C:\Users\Willard\Documents\My Dropbox\UNM Geography\Courses\2014 Spring\Geog 585 Internet Mapping\Assignments\lab5\raster bounding2.gif" border="0" alt="Vector image.gif" /></a> 
+    <div id="map-canvas"/>
+  </body>
+</html>
+

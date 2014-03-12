@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+<title>Geog 585 Mid-term Exam</title>
+
+			<style type ="text/css">
+		h1 { text-align: center; color: red; text: large}
+		h2 { text-align: left; color: blue; text: medium;}
+		h3 { text-align: left; color: black; text: medium;}
+			
+.intro-text { font: 12pt sans-serif;color='red' }
+</style>
+</head>
+<body>
+
+<p>Willard Hunter<br/>March 12. 2014</p>
+<p></p>
+<h2>Question 1</h2>
+	
+	<p class="intro-text">Which command line utility would you use to determine the following (4 pts each)<br /></p>
+	<p>1. The spatial extent of a GML file (choose one)? Answer: ogrinfo <br />
+	2. The spatial reference system of a raster file in the format of a GeoTIFF choose one? Answer: gdalinfo</p>
+	
+	<h2>Question 2</h2>
+	
+	<p class="intro-text">What combination of OGC Service and Request (e.g. SERVICE=WMS&amp;REQUEST=GetFeatureInfo) would you use to perform the
+	following? (3 pts each)</p>
+	<p>1. Determine the spatial extent of an available layer from a Web Map Service? ANSWER: SERVICE=WMS&amp;REQUEST=GetCapabilities</p>
+	<p>2. Obtain a list of coverages from a Web Coverage service? ANSWER: SERVICE=WCS&amp;REQUEST=GetCapabilities</p>
+	<p>3. Determine what file formats are supported by a Web Feature Service for the delivery of available data types (i.e. layers)? ANSWER: SERVICE=WFS&amp;REQUEST=GetCapabilities</p>
+	<p>4. Retrieve a map image from a Web Map Service? ANSWER: SERVICE=WMS&amp;REQUEST=GetMap</p>
+	<p>5. Retrieve data from an available coverage from a Web Coverage Service? ANSWER: SERVICE=WCS&amp;REQUEST=GetCoverage</p>	
+		
+
+<h2>	Question 3 </h2>
+<p class="intro-text">Use the cs2cs command line utility to convert the following latitude-longitude coordinates
+(WGS84) to UTM, Zone 13N, NAD83 coordinates (5 pts each)</p>
+<p>I converted the projections to EPSG values: WGS84 - EPSG is 4326. NAD83 UTM Zone 13N - EPSG is 3743</p>
+<p>1. 35.682180 North Latitude -105.939670 East Longitude (New Mexico State Capitol)? Answer: 414970.04 3949105.23</p>
+<p>2. 34.891983 North Latitude -107.930153 East Longitude (El Malpais National Monument)? Answer: 232227.14 3864983.25</p>
+	
+	
+<h2>	Question 4 </h2>
+<p class="intro-text">Perform the following WMS GetCapabilities request (Link)
+http://neowms.sci.gsfc.nasa.gov/wms/wms?version=1.1.1&service=WMS&request=GetCapabilities
+And answer the following questions (4 pts each)</p>
+
+<p>1. What is the name of the service? Answer: The name of the service is NASA Earth Observations (NEO) WMS</p>
+<p>2. What file formats are supported by the GetMap request? Answer: The supported formats are image/png and image/jpeg.</p>
+<p>3. What are the names of three of the layers included in the service? Answer: Three layers are MOD14A1_E_FIRE, MOD14A1_D_FIRE, and Aerosol Optical Thickness. Each has a different title.</p>
+
+
+<h2>	Question 5 </h2>
+<p class="intro-text">Compose a GetMap request for the WMS referenced in Question 4 that includes the following
+characteristics:</p>
+<p>• JPEG image format</p>
+<p>• 1200 pixels wide (you will need to calculate the height based upon the aspect ratio of the bounding
+box)</p>
+<p>• Bounding Box (EPSG:4326): Min X = -128 East Longitude, Min Y = 21.5 North Latitude, Max
+X = -62 East Longitude, Max Y = 54.5 North Latitude</p>
+<p>• Layer to be mapped = “MOD_LSTD_CLIM_M”</p>
+<p></p>
+<p>Here is the GetMap request (and it works!):</p>
+<a href="http://neowms.sci.gsfc.nasa.gov/wms/wms?VERSION=1.1.1&SERVICE=WMS&REQUEST=GetMap&BBOX=-128,21.5,-62,54.5&LAYERS=MOD_LSTD_CLIM_M&WIDTH=1200&HEIGHT=600&SRS=EPSG:4326&FORMAT=image/jpeg">http://neowms.sci.gsfc.nasa.gov map</a>
+
+</p</p>
+<h2>Question 6 </h2>
+<p class="intro-text">From the XML GetCapabilities returned by the following WFS request (Link) answer the
+following questions (4 pts each.</p>
+<p>http://services.nationalmap.gov/arcgis/services/WFS/transportation/MapServer/WFSServer?
+request=GetCapabilities&service=WFS</p>
+<p><i>1. What is the title for this service?</i> Answer: WFS_transportation</p>
+<p><i>2. What file format(s) are supported by this service’s GetFeature request?</i> Anwer: The output formats are text/xml;subType=gml/3.1.1/profiles/gmlsf/1.0.0/0</p>
+<p><i>3. What is the DefaultSRS or the FeatureType named “WFS_transportation:Interstate”?</i> Answer: urn:ogc:def:crs:EPSG:6.9:4326</p>
+<p><i>4. What is the WGS84BoundingBox of the FeatureType named “WFS_transportation:Interstate”?</i> Answer: </p>
+<dt>      -158.10419299999992 21.27785000000005,-67.781173999999908 49.002374000000088</dt>
+
+<h2>Question 7 </h2>
+<p class="intro-text">From the XML GetCapabilities returned by the following WCS request (Link) answer the
+following questions (4 pts each)</p>
+<p>http://sdf.ndbc.noaa.gov/thredds/wcs/hfradar_uswc_500m?request=GetCapabilities&version=1.0.0&service=WCS<p>
+<p><i>1. What is the description of the v coverage?</i> Answer: u m s-1 true  surface_eastward_sea_water_velocity </p>
+<p><i>2. How many coverages are available from this service?</i> Answer: 4 coverages - u,v,DOPx, and DOPy </p>
+
+<h2>Question 8a </h2>
+<p class="intro-text">Formulate a complete DescribeCoverage request for the v coverage for the WCS service referenced
+in Question 7. (4 pts)</p>
+<p><i>DescribeCoverage request</i></p>
+<p>Here is the DescribeCoverage request:<br/> </p>
+<a href="http://sdf.ndbc.noaa.gov/thredds/wcs/hfradar_uswc_500m?request=DescribeCoverage&version=1.0.0&service=WCS&Coverage=v">Describe Coverage Request</a>
+
+<h2>Question 8b </h2>
+<p class="intro-text">From the returned XML document answer the following questions. (4 pts each)</p>
+<p><i>1. What is the spatial domain for the ‘v‘ coverage?</i></p>
+<p> The spatial domain is described in this line:<br/> EnvelopeWithTimePeriod srsName="urn:ogc:def:crs:OGC:1.3:CRS84"</p>
+<p><i>2. What file formats are available for ‘v‘ data delivered by this service?</i></p>
+<p> The following formats are supported: GeoTIFF, GeoTIFF_Float, NetCDF3</p>
+<p><i>3. What SRS(s) are supported by this service for requested data delivery?</i></p>
+<p> Thress SRS's are identified:<br/>srsName="urn:ogc:def:crs:OGC:1.3:CRS84"<br/>
+srsName="urn:ogc:def:crs:OGC:1.3:CRS84"<br/>
+srsName="EPSG:0 [Latitude_Longitude]" dimension="2"</p>
+</body>
+</html>

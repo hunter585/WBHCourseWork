@@ -1,0 +1,103 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>
+    <script type="text/javascript">
+        
+        // define global variables
+        var lon = -106.5;
+        var lat = 36;
+        var zoom = 4.3;
+        var map;
+        var layer, congdistrictspartiesLayer, congdistrictsLayer;
+        
+        // define map controls
+        var baseControls = [
+        	new OpenLayers.Control.Navigation({}),
+        	new OpenLayers.Control.PanZoomBar({}),
+			new OpenLayers.Control.LayerSwitcher({}),
+			new OpenLayers.Control.Permalink(),
+			new OpenLayers.Control.MousePosition({})
+        ];
+
+        // =============== Initialization function ===================
+        function init(){
+            //map = new OpenLayers.Map( 'map' );
+            
+            map = new OpenLayers.Map('map', {
+				projection: 'EPSG:3081',
+				maxExtent: new OpenLayers.Bounds(-14037508, -14037508,
+				12037508, 12037508.34),
+				maxResolution: 100543.0339,
+				units: 'm', 
+				controls: baseControls
+			});
+            
+			// =========== OSM Map ====================
+            layer = new OpenLayers.Layer.OSM( "Open Street Map");
+            map.addLayer(layer);
+            
+            // =========== USGS National Atlas WMS ====
+            // from USGS National Atlas: http://webservices.nationalatlas.gov/wms/boundaries?SERVICE=WMS&REQUEST=GetCapabilities
+               congdistrictspartiesLayer = new OpenLayers.Layer.WMS( 
+            	"2012 US Congressional Districts with parties", 
+            	"http://webservices.nationalatlas.gov/wms?",
+            	{layers: "cdp", version: '1.3.0', transparent: 'TRUE'},
+            	{isBaseLayer: false}
+            );
+            map.addLayer(congdistrictspartiesLayer);
+			
+		
+           congdistrictsLayer = new OpenLayers.Layer.WMS( 
+            	"2012 US Congressional Districts", 
+            	"http://webservices.nationalatlas.gov/wms?",
+            	{layers: "cdl", version: '1.3.0', transparent: 'TRUE'},
+            	{isBaseLayer: false}
+            );
+            map.addLayer(congdistrictsLayer);
+			
+         
+			
+			map.setCenter(
+                new OpenLayers.LonLat(lon, lat).transform(
+                    new OpenLayers.Projection("EPSG:4326"),
+                    map.getProjectionObject()
+                ), zoom
+            );
+
+            map.addControl(new OpenLayers.Control.OverviewMap() );
+            map.addControl(new OpenLayers.Control.Scale() );
+            map.addControl(new OpenLayers.Control.ScaleLine() );
+        }
+        // =============== End of Initialization Function ============
+        
+	</script>
+	<style type="text/css">
+		#map {width:90%; height:500px}
+	</style>
+  </head>
+  <body onload="init()">
+  	    <h1>2012 U.S. House Seats by State and Party in Continental U.S.</h1>
+    <p>Map shows Republican seats in red and Democratic seats in blue.</p>
+	<!-- Map DIV -->
+	<div id="map"></div>
+	
+	     <script>
+     var bounds = new OpenLayers.Bounds(-106.63, 25.829999999999998, -93.510000000000005, 36.5);
+    </script>   
+	
+	<div style="margin:10px; padding: -5px 15px 0px 0px; background:lightgrey; border: 2px solid black; width:720px">
+	
+<ul>
+
+	<p>Commentary: This map is based on the 2010 census data. This specific map shows the results of the 2010
+		 US House elections across the U.S. It is an example of how maps can be visually deceiving. 
+		 At first glance, one would see the vast red areas and believe that the Republican Party
+controlled almost the entire country. In reality, much of the red spaces are virtually empty, 
+particularly in the Rocky mountain area. Much of the Democratic support is concentrated in
+urban areas while Republican support is more distributed. My master's thesis examines a unique 
+period between 2000 and 2004 when Texas was redistricted <i>twice</i> following the 2010 census. </li>
+	</p>
+	
+  </body>
+</html>
